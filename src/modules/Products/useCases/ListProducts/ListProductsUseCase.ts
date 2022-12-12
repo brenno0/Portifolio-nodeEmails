@@ -16,6 +16,10 @@ export class ListProductsUseCase {
     
     async execute(params?: ProductsListParams){
         
+        if(params.id && typeof params.id !== "string"){
+            throw new Error("Id inválido.")
+        }
+        
         const product = await prisma.products.findMany({
             
             orderBy:{
@@ -27,7 +31,7 @@ export class ListProductsUseCase {
                 name:params.name,
                 price:params.price,
                 description:params.description,
-                activeFlag:params.activeFlag,
+                activeFlag:Number(params.activeFlag),
                 userId:params.userId,
                 categoryId:params.categoryId,
                 banksId:params.banksId,

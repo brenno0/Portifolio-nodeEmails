@@ -8,6 +8,12 @@ interface IListBanksParams {
 
 export class ListBanksUseCase {
     async execute(params?: IListBanksParams){
+
+        
+        if(params.id && typeof params.id !== "string"){
+            throw new Error("Id inválido.")
+        }
+        
         const banks = await prisma.banks.findMany({
             orderBy:{
                 created_At:'desc'
