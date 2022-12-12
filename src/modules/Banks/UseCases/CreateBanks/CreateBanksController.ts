@@ -6,8 +6,6 @@ export class CreateBanksController {
         
         const{ name, bankPictureUrl } = request.body;
 
-        console.log(name)
-        console.log(bankPictureUrl)
 
         const createBanksUseCase =  new CreateBanksUseCase();
 
