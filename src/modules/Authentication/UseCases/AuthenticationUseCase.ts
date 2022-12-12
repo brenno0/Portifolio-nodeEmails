@@ -25,13 +25,23 @@ export class AuthenticationUseCase {
             throw new Error("Email ou senha invalidos.")
         }
 
-
         const token = sign({email}, "5c40c281a65846ed71cb9bad80cdd902", {
             subject: user.id,
             expiresIn:"1d"
         })
 
-        return token;
+        const authSuccessResult = {
+            "authToken":token,
+            "user":{
+                "id":user.id,
+                "name":user.name,
+                "email":user.email,
+                "isAdmin":user.isAdmin,
+                "createdAt":user.created_At,
+            }
+        }
+
+        return authSuccessResult;
 
 
     }

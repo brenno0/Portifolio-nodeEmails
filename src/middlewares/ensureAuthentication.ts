@@ -17,7 +17,6 @@ export async function ensureAuthentication(request:Request,response:Response, ne
         
         try { 
             const { sub } = verify(token, "5c40c281a65846ed71cb9bad80cdd902") as IPayload
-            console.log(sub)
 
             request.userId = sub;
             
