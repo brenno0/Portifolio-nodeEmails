@@ -21,6 +21,15 @@ export class ListCategoriesUseCase {
                 id:params.id,
                 name:params.name,
                 created_At:params.createdAt
+            },
+
+            select:{
+                id:true,
+                name:true,
+                Products:true,
+                color:true,
+                created_At:true,
+                _count:true,
             }
         })
         

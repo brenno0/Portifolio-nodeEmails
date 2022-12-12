@@ -6,6 +6,8 @@ export class ListProductsController {
     async handle(request:Request,response:Response){
         
         const listProductsUseCase = new ListProductsUseCase();
+
+
             
             const data = await listProductsUseCase.execute(request.query)
             .catch(err => {
