@@ -12,12 +12,12 @@ export class CreateUserUseCase {
 
     async execute({ name, email, password }: ICreateUser) {
 
-        if(!name || typeof password !== "string"){
+        if(!name || typeof name !== "string"){
             throw new Error("O Campo nome é obrigatório e precisa ser uma string")
-        }
-        if(!email || typeof password !== "string"){
+        } 
+        if(!email || typeof email !== "string"){
             throw new Error("O Campo email é obrigatório e precisa ser uma string")
-        }
+        } 
         if(!password || typeof password !== "string"){
             throw new Error("O Campo senha é obrigatório e precisa ser uma string")
         }

@@ -21,17 +21,18 @@ model User {
 }
 
 model Products {
-  id         String    @id @default(uuid())
-  name       String
-  price      Int
-  activeFlag Int       @default(1)
-  User       User?     @relation(fields: [userId], references: [id])
-  userId     String?
-  Category   Category? @relation(fields: [categoryId], references: [id])
-  categoryId String?
-  Banks      Banks?    @relation(fields: [banksId], references: [id])
-  banksId    String?
-  created_At DateTime  @default(now())
+  id          String    @id @default(uuid())
+  name        String
+  price       Int
+  description String
+  activeFlag  Int       @default(1)
+  User        User?     @relation(fields: [userId], references: [id])
+  userId      String?
+  Category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  Banks       Banks?    @relation(fields: [banksId], references: [id])
+  banksId     String?
+  created_At  DateTime  @default(now())
 }
 
 model Category {
