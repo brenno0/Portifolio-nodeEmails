@@ -17,6 +17,11 @@ export class ListProductsUseCase {
     async execute(params?: ProductsListParams){
         
         const product = await prisma.products.findMany({
+            
+            orderBy:{
+                created_At:'desc'
+            },
+            
             where:{
                 id:params.id,
                 name:params.name,

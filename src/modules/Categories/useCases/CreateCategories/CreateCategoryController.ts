@@ -6,7 +6,6 @@ export class CreateCategoryController {
     async handle(request:Request, response:Response){
         const { name, color } = request.body;
 
-        console.log(request.body)
 
         const createCategoryUseCase = new CreateCategoryUseCase();
 
