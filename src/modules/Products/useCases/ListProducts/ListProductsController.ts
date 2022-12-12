@@ -7,12 +7,11 @@ export class ListProductsController {
         
         const listProductsUseCase = new ListProductsUseCase();
 
+            const { userId } = request;
 
             
-            const data = await listProductsUseCase.execute(request.query)
-            .catch(err => {
-                return response.status(400).send({"errorMessage":err.message})
-            })
+            const data = await listProductsUseCase.execute(userId,request.query)
+           
 
             return response.status(200).json(data)
      

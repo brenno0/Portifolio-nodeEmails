@@ -6,7 +6,6 @@ interface ProductsListParams {
     price?:string;
     description?:string;
     activeFlag?:number;
-    userId?:string;
     categoryId?:string;
     banksId?:string;
     createdAt?:Date;
@@ -14,7 +13,7 @@ interface ProductsListParams {
 
 export class ListProductsUseCase {
     
-    async execute(params?: ProductsListParams){
+    async execute(userId:string, params?: ProductsListParams ){
         
         if(params.id && typeof params.id !== "string"){
             throw new Error("Id inválido.")
@@ -32,12 +31,12 @@ export class ListProductsUseCase {
             
             
             where:{
-                id:params?.id,
+                id:params.id,
                 name:params?.name,
                 price:params?.price,
                 description:params.description,
                 activeFlag:activeFlag,
-                userId:params.userId,
+                userId:userId,
                 categoryId:params.categoryId,
                 banksId:params.banksId,
                 created_At:params.createdAt

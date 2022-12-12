@@ -10,9 +10,7 @@ export class CreateBanksController {
         const createBanksUseCase =  new CreateBanksUseCase();
 
         const data = await createBanksUseCase.execute({ name, bankPictureUrl })
-        .catch(error => {
-            return response.status(400).json({"errorMessage":error.message})
-        })
+       
 
         return response.status(201).send(data)
     }

@@ -10,9 +10,7 @@ export class CreateCategoryController {
         const createCategoryUseCase = new CreateCategoryUseCase();
 
 
-        const data = await createCategoryUseCase.execute({ name, color }).catch(err => {
-            return response.status(400).json({"errorMessage": err.message})
-        })
+        const data = await createCategoryUseCase.execute({ name, color })
 
         return response.send(data).status(201)
     }
