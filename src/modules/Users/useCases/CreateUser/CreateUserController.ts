@@ -8,7 +8,8 @@ export class CreateUserController {
 
         const createUserUseCase = new CreateUserUseCase();
         
-        const data = await createUserUseCase.execute({name, password, email}).catch(err => {
+        const data = await createUserUseCase.execute({name, password, email})
+        .catch(err => {
             return response.status(400).json({"errorMessage":err.message})
         })      
         
