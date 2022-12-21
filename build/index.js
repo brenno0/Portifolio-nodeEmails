@@ -24,4 +24,4 @@ app.use((err, request, response, next) => {
         });
     }
 });
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
