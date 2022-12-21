@@ -1,13 +1,12 @@
 {
     "public":true,
     "build":{
-        "src":"./src/server.ts",
         "use":"@vercel/node"
     },
     "routes":[
         {
             "src":"/(.*)",
-            "dest":"./src/routes/index.ts"
+            "dest":"/src/routes"
         }
     ]
 
