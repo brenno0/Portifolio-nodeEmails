@@ -10,6 +10,9 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(routes_1.routes);
+app.use(cors({
+    origin: "https://brennorodrigues.me/"
+}));
 dotenv_1.default.config();
 app.use((err, request, response, next) => {
     if (err instanceof Error) {
@@ -25,3 +28,6 @@ app.use((err, request, response, next) => {
     }
 });
 app.listen(process.env.PORT || 3333);
+function cors(arg0) {
+    throw new Error('Function not implemented.');
+}
