@@ -22,6 +22,6 @@ app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
     }
 })
 
-app.listen(3333)
+app.listen(process.env.PORT || 3333)
 
 
