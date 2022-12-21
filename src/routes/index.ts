@@ -1,15 +1,11 @@
 import { Router } from 'express';
-import { bankRoutes } from './bank.routes';
-import { categoryRouter } from './category.routes';
-import { productRoutes } from './product.routes';
-import { userRoutes } from './user.routes';
+import { emailRoutes } from './email.routes';
+import nodemailer from 'nodemailer'
+
 
 const routes = Router()
 
 
-routes.use('/users',userRoutes)
-routes.use('/banks',bankRoutes)
-routes.use('/categories',categoryRouter)
-routes.use('/products',productRoutes)
+routes.use('/email',emailRoutes)
 
 export { routes }

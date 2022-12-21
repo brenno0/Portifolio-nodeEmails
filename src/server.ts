@@ -1,13 +1,13 @@
-import cors from "cors";
 import 'express-async-errors'
 import express, { NextFunction, Request, Response } from "express";
 import { routes } from "./routes";
+import dotenv from 'dotenv'
 
 const app = express()
 
 app.use(express.json())
 app.use(routes);
-app.use(cors()) // Passar config "origin com o endereço de prod"
+dotenv.config()
 
 app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
     if(err instanceof Error){
