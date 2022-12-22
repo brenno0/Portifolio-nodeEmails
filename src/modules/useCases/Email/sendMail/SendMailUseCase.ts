@@ -4,11 +4,10 @@ interface ISendEmailUseCase {
     mailer:string,
     text:string,
     name:string,
-    language:string
 }
 
 export class SendEmailUseCase {
-    execute({ mailer, text, name, language }: ISendEmailUseCase){
+    execute({ mailer, text, name }: ISendEmailUseCase){
         const user = process.env.USER as unknown as string
         const pass = process.env.PASSWORD as unknown as string
 

@@ -3,7 +3,7 @@ import { SendEmailUseCase } from "./SendMailUseCase";
 
 export class SendMailController {
     handle(request:Request,response:Response){
-        const { mailer, text, name, language } = request.body
+        const { mailer, text, name } = request.body
         
         const sendEmailUseCase = new SendEmailUseCase()
         
@@ -11,7 +11,6 @@ export class SendMailController {
             mailer, 
             text, 
             name,
-            language
         })
 
         return response.status(200).send(data)
