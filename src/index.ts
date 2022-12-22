@@ -8,9 +8,6 @@ const app = express()
 
 app.use(express.json())
 app.use(routes);
-app.use(cors({
-    origin:"https://brennorodrigues.me/"    
-}))
 dotenv.config()
 
 app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
@@ -27,4 +24,5 @@ app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
 })
 
 app.listen(process.env.PORT || 3333)
+
 
