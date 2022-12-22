@@ -3,11 +3,12 @@ import express, { NextFunction, Request, Response } from "express";
 import { routes } from "./routes";
 import dotenv from 'dotenv'
 import cors from 'cors'
+
+
 const app = express()
 
-
 app.use(cors({
-    origin:["https://brennorodrigues.me/", "http://127.0.0.1:5173/"],
+    origin:["https://brennorodrigues.me/"],
 }))
 dotenv.config()
 app.use(express.json())
