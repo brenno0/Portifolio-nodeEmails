@@ -7,12 +7,23 @@ import cors from 'cors'
 
 const app = express()
 
-app.use(cors({
-    origin:["https://brennorodrigues.me/"],
-}))
+var whitelist = ['https://brennorodrigues.me/',]
+var corsOptions = {
+  origin: function (origin, callback) {
+    console.log(origin)
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOptions))
 dotenv.config()
 app.use(express.json())
 app.use(routes);
+
 
 
 
