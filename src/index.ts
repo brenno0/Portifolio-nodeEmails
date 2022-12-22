@@ -11,7 +11,7 @@ app.use(routes);
 
 
 app.use(cors({
-    origin:"*"
+    origin:["https://brennorodrigues.me/"]
 }))
 dotenv.config()
 
