@@ -11,6 +11,7 @@ var whitelist = ['https://brennorodrigues.me/',]
 var corsOptions = {
   origin: function (origin, callback) {
     console.log(origin)
+    console.log(whitelist)
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
     } else {
