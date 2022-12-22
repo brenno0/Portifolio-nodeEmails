@@ -7,7 +7,7 @@ import cors from 'cors'
 
 const app = express()
 
-var whitelist = ['https://brennorodrigues.me/',]
+var whitelist = ['https://brennorodrigues.me',]
 var corsOptions = {
   origin: function (origin, callback) {
     console.log(origin)
