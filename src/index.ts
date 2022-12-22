@@ -6,15 +6,14 @@ import cors from 'cors'
 const app = express()
 
 
+app.use(cors({
+    origin:["https://brennorodrigues.me/", "http://127.0.0.1:5173/"],
+    optionsSuccessStatus: 200
+}))
 app.use(express.json())
 app.use(routes);
 
 
-app.use(cors({
-    origin:["https://brennorodrigues.me/", "http://127.0.0.1:5173/"],
-    optionsSuccessStatus: 200
-
-}))
 dotenv.config()
 
 app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
