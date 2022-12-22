@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SendEmailUseCase = void 0;
 const nodemailer_1 = __importDefault(require("nodemailer"));
 class SendEmailUseCase {
-    execute({ mailer, text, name, language }) {
+    execute({ mailer, text, name }) {
         const user = process.env.USER;
         const pass = process.env.PASSWORD;
         if (!mailer || !text || !name) {
